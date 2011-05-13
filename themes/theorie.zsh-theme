@@ -1,9 +1,12 @@
 # ZSH Theme - Preview: http://gyazo.com/8becc8a7ed5ab54a0262a470555c3eed.png
-local host_color='white'
+typeset -A host_color
+host_color=(Adrian white Keith red spoon cyan matrix green cube blue)
+
+local host=`hostname -s`
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-local user_host='%{$terminfo[bold]$fg[green]%}%n@%{$fg[$host_color]%}%m%{$reset_color%}'
+local user_host='%{$terminfo[bold]$fg[green]%}%n@%{$fg[$host_color[$host]]%}%m%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
 #local rvm_ruby='%{$fg[red]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
 local git_branch='$(git_prompt_info)%{$reset_color%}'
