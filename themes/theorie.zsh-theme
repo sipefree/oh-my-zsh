@@ -43,8 +43,16 @@ local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
 #local rvm_ruby='%{$fg[red]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
+if $SSH_CLIENT; then
+	local connection_tag="$fg[blue]SSH$reset_color "
+fi
 
-PROMPT="╭─${user_host} %D{[%I:%M:%S]} ${current_dir} ${git_branch}
+if $IS_VM; then
+	local connection_tag="$fg[yellow]VM$reset_color "
+fi
+
+
+PROMPT="╭─${connection_tag}${user_host} %D{[%I:%M:%S]} ${current_dir} ${git_branch}
 ╰─%B$(prompt_char)%b "
 RPS1="${return_code}"
 
