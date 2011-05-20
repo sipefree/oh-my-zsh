@@ -33,7 +33,7 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 local username=`whoami`
 if [ $username = "root" ]; then
-	local username_prompt="%{$terminfo[bold]$fg[white]$bg[red]%}$FX[blink]$username$FX[reset]%{$reset_color%}@"
+	local username_prompt="%{$terminfo[bold]$fg[white]$bg[red]%}$username%{$reset_color%}@"
 else
 	local username_prompt="%{$terminfo[bold]$fg[green]%}$username%{$reset_color%}@"
 fi
