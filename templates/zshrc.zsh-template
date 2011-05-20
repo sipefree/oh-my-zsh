@@ -23,6 +23,9 @@ export ZSH_THEME="theorie"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git github lol)
 
+# Uncomment if this is a VM
+#export IS_VM="true"
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
