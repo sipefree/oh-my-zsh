@@ -1,6 +1,6 @@
 # ZSH Theme - Preview: http://gyazo.com/8becc8a7ed5ab54a0262a470555c3eed.png
 typeset -A host_color
-host_color=(Adrian white Keith red spoon cyan matrix green cube blue)
+host_color=(Adrian white adrian white Keith red keith red spoon cyan matrix green cube blue)
 
 function prompt_char {
 	if [ `whoami` = "root" ]; then
